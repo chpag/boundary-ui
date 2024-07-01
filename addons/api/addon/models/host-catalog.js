@@ -14,9 +14,11 @@ export const TYPES_HOST_CATALOG = Object.freeze([
 
 export const TYPE_HOST_CATALOG_PLUGIN_AWS = 'aws';
 export const TYPE_HOST_CATALOG_PLUGIN_AZURE = 'azure';
+export const TYPE_HOST_CATALOG_PLUGIN_GOOGLE = 'google';
 export const TYPES_HOST_CATALOG_PLUGIN = [
   TYPE_HOST_CATALOG_PLUGIN_AWS,
   TYPE_HOST_CATALOG_PLUGIN_AZURE,
+  TYPE_HOST_CATALOG_PLUGIN_GOOGLE,
 ];
 
 export default class HostCatalogModel extends GeneratedHostCatalogModel {
@@ -64,6 +66,14 @@ export default class HostCatalogModel extends GeneratedHostCatalogModel {
     return this.compositeType === 'azure';
   }
 
+  /**
+   * True if host catalog plugin type is Google.
+   * @type {boolean}
+   */
+  get isGoogle() {
+    return this.compositeType === 'google';
+  }
+  
   /**
    * If host catalog is a plugin return `plugin.name`,
    * otherwise return the host catalog type.
