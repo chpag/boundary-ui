@@ -86,6 +86,14 @@ export default class HostModel extends GeneratedHostModel {
   }
 
   /**
+   * True if the host plugin type is Google.
+   * @type {boolean}
+   */
+  get isGoogle() {
+    return this.compositeType === 'google';
+  }
+
+  /**
    * If host is a plugin return `plugin.name`,
    * otherwise return the host type.
    * @type {string}
