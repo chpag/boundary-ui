@@ -50,6 +50,13 @@ export default class HostSetModel extends GeneratedHostSetModel {
     return this.compositeType === 'azure';
   }
 
+/**
+   * Return if a host-set plugin is Google or not.
+   */
+  get isGoogle() {
+    return this.compositeType === 'google';
+  }
+
   /**
    * If a host-set is a plugin return its name,
    * otherwise returns the host-set type
